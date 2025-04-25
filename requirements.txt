@@ -1,32 +1,18 @@
-"""
-BrokerBuddy Requirements File
-
-This file lists all the Python packages required for the BrokerBuddy application.
-"""
-
-# Web Framework
 Flask==2.2.3
 Werkzeug==2.2.3
 Jinja2==3.1.2
 itsdangerous==2.1.2
 click==8.1.3
 
-# Database
-SQLite3==0.0.0
-
-# Data Processing
 pandas==2.2.3
 numpy==2.2.4
 openpyxl==3.1.5
 et-xmlfile==2.0.0
 
-# Utilities
 python-dateutil==2.9.0.post0
 pytz==2025.2
 six==1.17.0
 
-# Production Server
 gunicorn==20.1.0
-
-# Environment Variables
 python-dotenv==1.0.0
+
