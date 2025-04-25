@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Information - BrokerBuddy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">BrokerBuddy</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('client_form') }}">Find Lenders</a></li>
+                <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                <li><a href="{{ url_for('crm_settings') }}">CRM Settings</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="page-title">Client Information Form</h1>
+                </div>
+                <div class="card-body">
+                    <p>Enter your client's information below to find matching equipment finance lenders.</p>
+                    
+                    <form action="{{ url_for('submit_client') }}" method="post">
+                        <div class="form-section">
+                            <h2>Basic Information</h2>
+                            
+                            <div class="form-group">
+                                <label for="client_name" class="form-label">Client Name</label>
+                                <input type="text" id="client_name" name="client_name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="client_email" class="form-label">Client Email</label>
+                                <input type="email" id="client_email" name="client_email" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="client_phone" class="form-label">Client Phone</label>
+                                <input type="tel" id="client_phone" name="client_phone" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h2>Financial Criteria</h2>
+                            
+                            <div class="form-group">
+                                <label for="amount_considered" class="form-label">Amount Requested</label>
+                                <input type="text" id="amount_considered" name="amount_considered" class="form-control" placeholder="e.g. $50,000" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="time_in_business" class="form-label">Time in Business</label>
+                                <input type="text" id="time_in_business" name="time_in_business" class="form-control" placeholder="e.g. 3 years" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="personal_credit" class="form-label">Personal Credit Score</label>
+                                <select id="personal_credit" name="personal_credit" class="form-select" required>
+                                    <option value="">Select Credit Score Range</option>
+                                    <option value="550-599">550-599</option>
+                                    <option value="600-649">600-649</option>
+                                    <option value="650-699">650-699</option>
+                                    <option value="700-749">700-749</option>
+                                    <option value="750+">750+</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="business_credit" class="form-label">Business Credit Score (if available)</label>
+                                <input type="text" id="business_credit" name="business_credit" class="form-control" placeholder="e.g. 75 Paydex">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="bank_statements" class="form-label">Bank Statements Available</label>
+                                <select id="bank_statements" name="bank_statements" class="form-select">
+                                    <option value="">Select Option</option>
+                                    <option value="3 months">3 months</option>
+                                    <option value="6 months">6 months</option>
+                                    <option value="12 months">12 months</option>
+                                    <option value="None">None available</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h2>Equipment Information</h2>
+                            
+                            <div class="form-group">
+                                <label for="collateral_age" class="form-label">Equipment Age</label>
+                                <input type="text" id="collateral_age" name="collateral_age" class="form-control" placeholder="e.g. 5 years">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="equipment_type" class="form-label">Equipment Type</label>
+                                <input type="text" id="equipment_type" name="equipment_type" class="form-control" placeholder="e.g. Excavator, Truck, etc.">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="titled_vehicles" class="form-label">Is this a Titled Vehicle?</label>
+                                <select id="titled_vehicles" name="titled_vehicles" class="form-select">
+                                    <option value="">Select Option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h2>Business Information</h2>
+                            
+                            <div class="form-group">
+                                <label for="industry" class="form-label">Industry</label>
+                                <input type="text" id="industry" name="industry" class="form-control" placeholder="e.g. Construction, Transportation, etc.">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="state" class="form-label">State</label>
+                                <input type="text" id="state" name="state" class="form-control" placeholder="e.g. CA, TX, etc.">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="startups" class="form-label">Is this a Startup Business?</label>
+                                <select id="startups" name="startups" class="form-select">
+                                    <option value="">Select Option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Find Matching Lenders</button>
+                            <button type="reset" class="btn btn-secondary">Reset Form</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BrokerBuddy</h3>
+                    <p>Helping commercial finance brokers match clients with the right equipment finance lenders.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('client_form') }}">Find Lenders</a></li>
+                        <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                        <li><a href="{{ url_for('crm_settings') }}">CRM Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BrokerBuddy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

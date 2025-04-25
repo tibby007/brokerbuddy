@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrokerBuddy - Equipment Finance Matching Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">BrokerBuddy</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('client_form') }}">Find Lenders</a></li>
+                <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                <li><a href="{{ url_for('crm_settings') }}">CRM Settings</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="page-title">Welcome to BrokerBuddy</h1>
+                    
+                    <div class="intro-section">
+                        <h2>Your Equipment Finance Matching Tool</h2>
+                        <p>BrokerBuddy helps commercial finance brokers quickly match clients with the right equipment finance lenders based on their specific needs and qualifications.</p>
+                        
+                        <div class="features">
+                            <h3>Key Features:</h3>
+                            <ul>
+                                <li>Match client information with lender guidelines</li>
+                                <li>View detailed match scores and explanations</li>
+                                <li>Email lenders directly from the platform</li>
+                                <li>Update lender guidelines as they change</li>
+                                <li>CRM integration capabilities</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cta-section">
+                            <h3>Ready to find the right lender for your client?</h3>
+                            <a href="{{ url_for('client_form') }}" class="btn btn-primary">Start Matching Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="how-it-works">
+                        <h2>How It Works</h2>
+                        <div class="steps">
+                            <div class="step">
+                                <h3>1. Enter Client Information</h3>
+                                <p>Input your client's details including credit score, time in business, equipment needs, and financial information.</p>
+                            </div>
+                            
+                            <div class="step">
+                                <h3>2. Get Matched</h3>
+                                <p>Our algorithm compares your client's profile against our database of lender guidelines to find the best matches.</p>
+                            </div>
+                            
+                            <div class="step">
+                                <h3>3. Review Results</h3>
+                                <p>See detailed match scores and explanations for why each lender is a good fit for your client.</p>
+                            </div>
+                            
+                            <div class="step">
+                                <h3>4. Take Action</h3>
+                                <p>Contact lenders directly, save client profiles, or export results to your CRM system.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BrokerBuddy</h3>
+                    <p>Helping commercial finance brokers match clients with the right equipment finance lenders.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('client_form') }}">Find Lenders</a></li>
+                        <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                        <li><a href="{{ url_for('crm_settings') }}">CRM Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BrokerBuddy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
